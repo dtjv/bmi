@@ -15,6 +15,6 @@ sort_position: 3
 
 #### Chiropractic
 
-[Dr. Haun]({{ site.url }}/trainers/tim-haun) has been helping active individuals stay performing at their best for many years. He utilizes soft tissue techniques, chiropractic adjustments, as well as corrective functional exercise to keep his patients performing at peak levels. Whether you’ve had pain for a few hours or a few years, Dr. Haun's multifaceted whole person orientation to health care can get you back up to speed, and performing at your best.
+[Dr. Haun]({{ site.baseurl }}/trainers/tim-haun) has been helping active individuals stay performing at their best for many years. He utilizes soft tissue techniques, chiropractic adjustments, as well as corrective functional exercise to keep his patients performing at peak levels. Whether you’ve had pain for a few hours or a few years, Dr. Haun's multifaceted whole person orientation to health care can get you back up to speed, and performing at your best.
 
 [Schedule](mailto:timmhaun@gmail.com?subject=Request%20for%20Chiropractic%20Appointment) a chiropractic appointment with Dr. Haun.

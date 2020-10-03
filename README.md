@@ -1,6 +1,6 @@
 # bmi
 
-Website for BMI Fitness. ([demo](https://djtv.io/bmi))
+Website for BMI Fitness. ([demo](https://djtv.io/bmi/))
 
 _Unfortunately, this business closed due to COVID-19._
 

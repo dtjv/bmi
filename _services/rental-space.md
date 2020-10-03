@@ -30,4 +30,4 @@ If you are a Corporate Event Organizer looking for a fun and healthy Team Buildi
 
 Finally, if your next commercial or magazine spread feature life in a gym, then you’ve found your space for the perfect photo or video shoot. Our natural lighting and state-of-the-art equipment provide a beautiful back drop.
 
-![image of BMI facility](i{{ site.baseurl }}/assets/uploads/2020/01/01/bmi-02.jpg)
+![image of BMI facility]({{ site.baseurl }}/assets/uploads/2020/01/01/bmi-02.jpg)
