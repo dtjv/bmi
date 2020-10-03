@@ -1,0 +1,25 @@
+---
+label: service
+hide_body: false
+fields:
+- type: include
+  name: title
+  label: Title
+  template: title
+- type: include
+  name: summary
+  label: Summary
+  template: summary
+- type: number
+  name: sort_position
+  label: Sort Position
+  description: The sorting position among all services
+  default: 1
+  config:
+    min: 1
+    required: true
+pages:
+- _services/group-classes.md
+- _services/personal-training.md
+- _services/rental-space.md
+- _services/wellness-services.md

@@ -1,0 +1,130 @@
+<div class="row">
+  <div class="col s12">
+    <h4>Facility Rental Request</h4>
+    <p>Please complete and submit the following form if you're interested in renting our facility.</p>
+  </div>
+</div>
+<div class="row">
+  <form id="rent-form" action="https://formspree.io/{{ site.data.contact.email }}" method="POST" class="col s12" data-parsley-validate="">
+    <div class="row mt2">
+      <div class="input-field col s12 m3">
+        <input id="first_name" name="first_name" type="text" required="" />
+        <label for="first_name">First Name <span class="red-text">*</span></label>
+      </div>
+
+      <div class="input-field col s12 m3">
+        <input id="last_name" name="last_name" type="text" required="" />
+        <label for="last_name">Last Name <span class="red-text">*</span></label>
+      </div>
+
+      <div class="input-field col s12 m3">
+        <input id="email" name="email" type="email" required="" />
+        <label for="email">Email <span class="red-text">*</span></label>
+      </div>
+
+      <div class="input-field col s12 m3">
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          required=""
+          pattern="^\d{3}(-*)\d{3}\1\d{4}$"
+          data-parsley-pattern-message="Example: 408-555-5555"
+        />
+        <label for="phone">Phone <span class="red-text">*</span></label>
+      </div>
+    </div>
+
+    <div class="row mt2">
+      <div class="col s12 m3">
+        <p class="bold mt1">Rental Purpose <span class="red-text">*</span></p>
+        <p class="normal mb0">
+        {% assign events = "Boot Camp;Workshop;Photoshoot;Corporate Team Building;Other" | split: ";" %}
+        {% for event in events %}
+          {% assign id = event | replace: " ", "-" %}
+          <label for="{{ id }}">
+            <input
+              id="{{ id }}"
+              name="event-type"
+              value="{{ event }}"
+              type="radio"
+              class="with-gap"
+              {% if forloop.first == true %}
+                required=""
+                data-parsley-errors-container="#event-type-error-messages"
+                data-parsley-required-message="Please select a purpose."
+              {% endif %}
+            />
+            <span>{{ event }}</span>
+          </label>
+          <br />
+        {% endfor %}
+        <div id="event-type-error-messages"></div>
+        </p>
+      </div>
+
+      <div class="col s12 m3">
+        <p class="bold mt1">Start Date? <span class="red-text">*</span></p>
+        <div class="input-field">
+          <label for="start-date">Choose a Date</label>
+          <input id="start-date" type="text" name="start-date" class="datepicker" required="" />
+        </div>
+      </div>
+
+      <div class="col s12 m3">
+        <p class="bold mt1">End Date? <span class="red-text">*</span></p>
+        <div class="input-field">
+          <label for="end-date">Choose a Date</label>
+          <input id="end-date" type="text" name="end-date" class="datepicker" required="" data-parsley-check-end-date="#start-date" />
+        </div>
+      </div>
+
+      <div class="col s12 m3">
+        <p class="bold mt1">Time(s) <span class="red-text">*</span></p>
+        <p class="normal mb0">
+        {% assign times = "6am-8am, 8am-10am, 10am-12pm, 12pm-2pm, 2pm-4pm, 4pm-6pm, 6pm-8pm" | split: ", " %}
+        {% for time in times %}
+          <label for="{{ time }}">
+            <input
+              id="{{ time }}"
+              name="times"
+              type="checkbox"
+              value="{{ time }}"
+              class="filled-in"
+              {% if forloop.first == true %}
+                data-parsley-mincheck="1"
+                required=""
+                data-parsley-errors-container="#times-error-messages"
+                data-parsley-required-message="Please select at least one time."
+              {% endif %}
+            />
+            <span>{{ time }}</span>
+          </label>
+          <br />
+        {% endfor %}
+        <div id="times-error-messages"></div>
+        </p>
+      </div>
+    </div>
+
+    <div class="row mt2">
+      <div class="col s12">
+        <p class="bold mt1">Any specific requirements or message?</p>
+        <div class="input-field">
+          <textarea id="message" name="message" class="materialize-textarea"></textarea>
+          <label for="message">Write your message here...</label>
+        </div>
+      </div>
+    </div>
+
+    <input type="hidden" name="_next" value="{{ '/thanks/' }}" />
+    <input type="hidden" name="_subject" value="Rental Space Inquiry" />
+    <input type="hidden" name="_cc" value="{{ site.developer }}" />
+    <!-- <input type="hidden" name="_cc" value="{{ site.developer }}" /> -->
+    <input type="text" name="_gotcha" style="display:none" />
+    <button type="submit" name="Submit" value="Rent Space" form="rent-form" class="btn-large btn-bmi--generic">
+      Submit
+    </button>
+  </form>
+</div>
+

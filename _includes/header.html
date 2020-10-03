@@ -1,0 +1,37 @@
+<header>
+  {% include nav.html %} {% assign header = page.header | default: layout.header
+  %} {% case header %} {% when "home" %}
+  <div class="center header-home">
+    <img src="{{ '/assets/imgs/team.jpg' | relative_url }}" alt="pic of team" />
+
+    <div class="header-home-headline">
+      <h1>Be. More. Inspired.</h1>
+      <button type="button" class="mt0">
+        <a
+          href="{{ '/trainers' | relative_url }}"
+          class="waves-effect waves-light btn btn-bmi--find hide-on-med-and-up"
+        >
+          Find a Trainer
+        </a>
+        <a
+          href="{{ '/trainers' | relative_url }}"
+          class="waves-effect waves-light btn-large btn-bmi--find hide-on-small-only"
+        >
+          Find a Trainer
+        </a>
+      </button>
+    </div>
+  </div>
+
+  {% else %}
+  <div class="center header-page">
+    <div class="mt3 mb3">
+      <h2 class="mb0">{{ page.title }}</h2>
+      {% if page.subtitle %}
+      <h5 class="white-text">{{ page.subtitle }}</h5>
+      {% endif %}
+    </div>
+  </div>
+
+  {% endcase %}
+</header>

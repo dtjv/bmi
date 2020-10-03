@@ -1,0 +1,11 @@
+.select-wrapper {
+  ul {
+    @extend %non-markdown-ul;
+  }
+}
+
+label,
+::placeholder,
+.input-field > label {
+  color: $brand-primary;
+}

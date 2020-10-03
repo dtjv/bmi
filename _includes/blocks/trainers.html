@@ -1,0 +1,30 @@
+{% for trainer in site.trainers %}
+  {% assign summary = trainer.summary %}
+  <div class="divider mb2"></div>
+  <section class="mo">
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="mo-image valign-wrapper">
+          {% include pic.html src=summary.image.src alt=summary.image.alt %}
+        </div>
+      </div>
+      <div class="col s12 m8">
+        <div class="mo-text">
+          <h4 id="{{ trainer.title | slugify }}"> {{ trainer.title }} </h4>
+          <span class="hide-on-small-only">
+            {{ summary.description | markdownify }}
+          </span>
+
+          {% assign url = trainer.path | remove: "_" | remove: ".md" | absolute_url %}
+          <button type="button">
+            <a href="{{ url }}" class="waves-effect waves-light btn btn-bmi--generic mt0">
+              {{ summary.button_label }}
+            </a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endfor %}
+
+

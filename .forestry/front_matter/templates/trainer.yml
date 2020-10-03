@@ -1,0 +1,41 @@
+---
+label: trainer
+hide_body: false
+fields:
+- type: include
+  name: title
+  label: Title
+  template: title
+- type: text
+  name: subtitle
+  label: SubTitle
+  description: List trainer's credentials (i.e. NASM CPT, CSCS, MBA, etc.)
+- type: include
+  name: summary
+  label: Summary
+  template: summary
+- type: field_group_list
+  name: images
+  label: Images
+  description: Upload all trainer images here...
+  fields:
+  - type: file
+    name: src
+    label: Image URL
+  - type: text
+    name: alt
+    label: Image 'alt'
+    description: Write a short description of image
+    config:
+      required: true
+pages:
+- _trainers/ai-nguyen.md
+- _trainers/amy-radosevich.md
+- _trainers/angelina-constantino.md
+- _trainers/beth-pagano.md
+- _trainers/david-valles.md
+- _trainers/lynn-christensen.md
+- _trainers/thao-vu-dring.md
+- _trainers/tim-haun.md
+- _trainers/vincent-kiss.md
+- _trainers/william-lu.md

@@ -1,0 +1,19 @@
+.mo {
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+
+  &-text,
+  &-image {
+    margin-top: 20px;
+  }
+
+  @media #{$medium-and-up} {
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    &-text,
+    &-image {
+      margin: 2em 1em 2em;
+    }
+  }
+}

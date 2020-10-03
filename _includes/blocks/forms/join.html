@@ -1,0 +1,259 @@
+<div class="row">
+  <div class="col s12">
+    <h4>Apply to BMI</h4>
+    <p>Please fill out this simple form and someone will contact you shortly.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12">
+    <form id="join-form" action="https://formspree.io/{{ site.data.contact.email }}" method="POST" class="col s12" data-parsley-validate="">
+      <div class="row mt2">
+        <div class="input-field col s12 m3">
+          <input id="first_name" name="first_name" type="text" required="" />
+          <label for="first_name">First Name <span class="red-text">*</span></label>
+        </div>
+
+        <div class="input-field col s12 m3">
+          <input id="last_name" name="last_name" type="text" required="" />
+          <label for="last_name">Last Name <span class="red-text">*</span></label>
+        </div>
+
+        <div class="input-field col s12 m3">
+          <input id="email" name="email" type="email" required="" />
+          <label for="email">Email <span class="red-text">*</span></label>
+        </div>
+
+        <div class="input-field col s12 m3">
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            required=""
+            pattern="^\d{3}(-*)\d{3}\1\d{4}$"
+            data-parsley-pattern-message="Example: 408-555-5555"
+          />
+          <label for="phone">Phone <span class="red-text">*</span></label>
+        </div>
+
+      </div>
+
+      <div class="row mt2">
+        <div class="col s12 m5 offset-m1">
+          <p class="bold mt1">How many years as a trainer? <span class="red-text">*</span></p>
+          <p class="normal mb0">
+          {% assign years = "0 - 2 Years;3 - 5 Years;5 - 7 Years;8+ Years" | split: ";" %}
+          {% for year in years %}
+            {% assign id = year | replace: " ", "-" %}
+            <label for="{{ id }}">
+              <input
+                id="{{ id }}"
+                name="years-of-experience"
+                value="{{ year }}"
+                type="radio"
+                class="with-gap"
+                {% if forloop.first == true %}
+                  required=""
+                  data-parsley-errors-container="#years-of-experience-error-messages"
+                  data-parsley-required-message="Please select an option"
+                {% endif %}
+              />
+              <span>{{ year }}</span>
+            </label>
+            <br />
+          {% endfor %}
+          <div id="years-of-experience-error-messages"></div>
+          </p>
+        </div>
+        <div class="col s12 m5">
+          <p class="bold mt1">How many clients will join BMI? <span class="red-text">*</span></p>
+          <p class="normal mb0">
+          {% assign num_clients = "0;1 - 5;6 - 10;10+" | split: ";" %}
+          {% for client-count in num_clients %}
+            {% assign id = client-count | replace: " ", "-" %}
+            <label for="{{ id }}">
+              <input
+                id="{{ id }}"
+                name="num-clients"
+                value="{{ client-count }}"
+                type="radio"
+                class="with-gap"
+                {% if forloop.first == true %}
+                  required=""
+                  data-parsley-errors-container="#num-clients-error-messages"
+                  data-parsley-required-message="Please select an option"
+                {% endif %}
+              />
+              <span>{{ client-count }}</span>
+            </label>
+            <br />
+          {% endfor %}
+          <div id="num-clients-error-messages"></div>
+          </p>
+        </div>
+      </div>
+
+      <div class="row mt2">
+        <div class="col s12 m4">
+          <p class="bold mt1">What position(s)? <span class="red-text">*</span></p>
+          <p class="normal mb0">
+          {% assign positions = "Personal Trainer;Pilates/Yoga Instructor;Group Exercise Instructor;Other" | split: ";" %}
+          {% for position in positions %}
+            {% assign id = position | replace: " ", "-" %}
+            <label for="{{ id }}">
+              <input
+                id="{{ id }}"
+                name="position-type"
+                value="{{ position }}"
+                type="checkbox"
+                class="filled-in"
+                {% if forloop.first == true %}
+                  required=""
+                  data-parsley-errors-container="#position-type-error-messages"
+                  data-parsley-required-message="Please select a desired position"
+                {% endif %}
+              />
+              <span>{{ position }}</span>
+            </label>
+            <br />
+          {% endfor %}
+          <div id="position-type-error-messages"></div>
+          </p>
+        </div>
+
+        <div class="col s12 m4">
+          <p class="bold mt1">Who Referred You?</p>
+          {% assign sources = "Google Search;Friend;Social Media;Other" | split: ";" %}
+          {% for source in sources %}
+            {% assign id = source | downcase | replace: " ", "-" %}
+            <p class="normal mb0">
+              <label for="{{ id }}">
+                <input id="{{ id }}" name="referrer" value="{{ source }}" type="checkbox" class="filled-in" />
+                <span>{{ source }}</span>
+              </label>
+            </p>
+          {% endfor %}
+        </div>
+
+        <div class="col s12 m4">
+          <p class="bold mt1">Start Date? <span class="red-text">*</span></p>
+          <div class="input-field">
+            <label for="start-date">Choose a Date</label>
+            <input id="start-date" type="text" name="start-date" class="datepicker" required="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt2">
+        <div class="col s12">
+          <p class="bold mt1">What degree(s) and/or certification(s) do you have?</p>
+          <div class="input-field">
+            <textarea id="certifications" name="certifications" class="materialize-textarea"></textarea>
+            <label for="certifications">List your certifications here...</label>
+          </div>
+        </div>
+
+        <div class="col s12">
+          <p class="bold mt1">What are your specialities?</p>
+          <div class="input-field">
+            <textarea id="specialties" name="specialties" class="materialize-textarea"></textarea>
+            <label for="specialties">List your specialties here...</label>
+          </div>
+        </div>
+
+        <div class="col s12">
+          <p class="bold mt1">Why do you want to join BMI?</p>
+          <div class="input-field">
+            <textarea id="why-join" name="why-join" class="materialize-textarea"></textarea>
+            <label for="why-join">Write your reasons to join here...</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mt2">
+        <div class="col s12 m4">
+          <p class="bold mt1">Referral 1</p>
+          <div class="input-field">
+            <input id="referrer-name-1" name="referrer-name-1" type="text" />
+            <label for="referrer-name-1">Name</label>
+          </div>
+          <div class="input-field">
+            <input
+              id="referrer-email-1"
+              name="referrer-email-1"
+              type="email"
+            />
+            <label for="referrer-email-1">Email</label>
+          </div>
+          <div class="input-field">
+            <input
+              id="referrer-phone-1"
+              name="referrer-phone-1"
+              type="text"
+              pattern="^\d{3}(-*)\d{3}\1\d{4}$"
+              data-parsley-pattern-message="Example: 408-555-5555"
+            />
+            <label for="referrer-phone-1">Phone</label>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <p class="bold mt1">Referral 2</p>
+          <div class="input-field">
+            <input id="referrer-name-2" name="referrer-name-2" type="text" />
+            <label for="referrer-name-2">Name</label>
+          </div>
+          <div class="input-field">
+            <input
+              id="referrer-email-2"
+              name="referrer-email-2"
+              type="email"
+            />
+            <label for="referrer-email-2">Email</label>
+          </div>
+          <div class="input-field">
+            <input
+              id="referrer-phone-2"
+              name="referrer-phone-2"
+              type="text"
+              pattern="^\d{3}(-*)\d{3}\1\d{4}$"
+              data-parsley-pattern-message="Example: 408-555-5555"
+            />
+            <label for="referrer-phone-2">Phone</label>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <p class="bold mt1">Referral 3</p>
+          <div class="input-field">
+            <input id="referrer-name-3" name="referrer-name-3" type="text" />
+            <label for="referrer-name-3">Name</label>
+          </div>
+          <div class="input-field">
+            <input
+              id="referrer-email-3"
+              name="referrer-email-3"
+              type="email"
+            />
+            <label for="referrer-email-3">Email</label>
+          </div>
+          <div class="input-field">
+            <input
+              id="referrer-phone-3"
+              name="referrer-phone-3"
+              type="text"
+              pattern="^\d{3}(-*)\d{3}\1\d{4}$"
+              data-parsley-pattern-message="Example: 408-555-5555"
+            />
+            <label for="referrer-phone-3">Phone</label>
+          </div>
+        </div>
+      </div>
+
+      <input type="hidden" name="_next" value="{{ '/thanks/' }}" />
+      <input type="hidden" name="_subject" value="Career Inquiry" />
+      <!-- <input type="hidden" name="_cc" value="{{ site.developer }}" /> -->
+      <input type="hidden" name="page-title" value="{{ page.title }}" style="display:none" />
+      <input type="text" name="_gotcha" style="display:none" />
+      <button type="submit" name="Submit" value="Join BMI" form="join-form" class="btn-large btn-bmi--generic">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

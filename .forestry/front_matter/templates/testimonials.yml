@@ -1,0 +1,49 @@
+---
+label: testimonials
+hide_body: true
+fields:
+- type: field_group_list
+  name: testimonials
+  label: Testimonials
+  fields:
+  - type: text
+    name: name
+    label: Name
+    description: Enter reviewer's full name. Leave blank if anonymous.
+    onfig:
+      required: true
+  - type: field_group
+    name: image
+    label: Image
+    fields:
+    - type: file
+      name: src
+      label: Image URL
+    - type: text
+      name: alt
+      label: Image 'alt'
+      description: Write a short description of image
+  - type: select
+    name: starRating
+    label: Star Rating
+    description: Select a Star Rating (1=Poor, 5=Great)
+    default: 5
+    config:
+      source:
+        type: custom
+      options:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+  - type: textarea
+    name: comment
+    label: Comment
+    description: Enter testimonial text here...
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+pages:
+- _data/testimonials.yml

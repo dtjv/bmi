@@ -1,0 +1,88 @@
+title: bmi fitness
+description: "BMI Fitness strives to personalize client experience by offering a variety of leading edge training methodologies with the support of expert trainers in an inclusive environment"
+author: "Team BMI"
+
+baseurl: /bmi
+url: https://dtjv.io
+
+date_format: '%b %-d, %Y'
+
+# explicitly list collection type layouts
+defaults:
+- scope:
+    path: ""
+  values:
+    layout: page
+- scope:
+    path: ""
+    type: posts
+  values:
+    layout: post
+- scope:
+    path: ""
+    type: trainers
+  values:
+    layout: trainer
+
+# explicity list collection types and url access
+collections:
+  pages:
+    output: true
+    permalink: "/:path/"
+  posts:
+    output: true
+    permalink: "/blog/:title/"
+  services:
+    output: true
+    permalink: "/services/:title/"
+  trainers:
+    output: true
+    permalink: "/trainers/:path/"
+
+sass:
+  style: compressed
+
+exclude:
+- vendor
+- NOTES.md
+
+plugins:
+- jekyll-feed
+- jekyll-seo-tag
+- jekyll-sitemap
+# - jekyll-picture-tag
+
+# configuration for jekyll-picture-tag plugin
+# picture:
+#   output: "assets/generated/"
+#   relative_url: false
+#   fast_build: development
+#   suppress_warnings: true
+
+# configuration for jekyll-seo-tag plugin
+social:
+  name: BMI Fitness
+  links:
+  - https://facebook.com/bmifitnesscoach
+  - https://yelp.com/biz/bmi-fitness-santa-clara
+  - https://instagram.com/bmifitness
+
+# configuration for footer icons
+footer_icons:
+- name: Facebook
+  link: https://facebook.com/bmifitnesscoach
+  icon_classes: fab fa-facebook-f
+- name: Google
+  link: https://www.google.com/search?q=bmi+fitness
+  icon_classes: fab fa-google
+- name: Yelp
+  link: https://yelp.com/biz/bmi-fitness-santa-clara
+  icon_classes: fab fa-yelp
+- name: Instagram
+  link: https://instagram.com/bmifitness
+  icon_classes: fab fa-instagram
+
+webmaster_verifications:
+  google:
+
+copyright: 2020 BMI Fitness

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="dns-prefetch" href="https://ajax.googleapis.com" as="script" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" as="script" />
+
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/brands.min.css' | relative_url }}"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/solid.min.css' | relative_url }}"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/fontawesome.min.css' | relative_url }}"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/main.css' | relative_url }}"
+      type="text/css"
+      media="screen"
+    />
+
+    {% seo %} {% feed_meta %}
+
+    <script
+      defer
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+    ></script>
+    <script defer src="{{ '/assets/js/nav.js' | relative_url }}"></script>
+    <script defer src="{{ '/assets/js/form.js' | relative_url }}"></script>
+    <script
+      defer
+      src="{{ '/assets/js/parsley.min.js' | relative_url }}"
+    ></script>
+  </head>
+  <body>
+    {% include header.html %}
+    <main>{{ content }}</main>
+    {% include footer.html %}
+  </body>
+</html>

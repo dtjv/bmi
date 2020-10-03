@@ -1,0 +1,8 @@
+{% if jekyll.environment == "nopic" %}
+<img
+  src="{{ include.src | relative_url }}"
+  alt="{{ include.alt }}"
+  class="{{ include.classes }}"
+/>
+{% else %} {% comment %} {% picture {{ include.src }} --alt {{ include.alt }}
+--img class="{{ include.classes }}" %} {% endcomment %} {% endif %}

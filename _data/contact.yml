@@ -1,0 +1,24 @@
+---
+address:
+  street: 1678 Coleman Ave.
+  city: Santa Clara
+  state: CA.
+  zip: 95050
+  country: U.S.A.
+hours:
+- name: Monday
+  hours: 6:00 AM to 8:00 PM
+- name: Tuesday
+  hours: 6:00 AM to 8:00 PM
+- name: Wednesday
+  hours: 6:00 AM to 8:00 PM
+- name: Thursday
+  hours: 6:00 AM to 8:00 PM
+- name: Friday
+  hours: 6:00 AM to 8:00 PM
+- name: Saturday
+  hours: BY APPOINTMENT ONLY
+- name: Sunday
+  hours: BY APPOINTMENT ONLY
+phone: (408) 492-1425
+email: info@bmifitnesscoach.com

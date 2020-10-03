@@ -1,0 +1,237 @@
+<div class="row">
+  <div class="col s12">
+    <h4>Schedule a Consultation</h4>
+    <p>Please take a moment to complete and submit the following form. Someone will contact you within two days.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12">
+    <form id="book-form" action="https://formspree.io/{{ site.data.contact.email }}" method="POST" class="col s12" data-parsley-validate="">
+      <div class="row mt2">
+        <div class="input-field col s12 m4">
+          <input id="first_name" name="first_name" type="text" required="" />
+          <label for="first_name">First Name <span class="red-text">*</span></label>
+        </div>
+
+        <div class="input-field col s12 m4">
+          <input id="last_name" name="last_name" type="text" required=""/>
+          <label for="last_name">Last Name <span class="red-text">*</span></label>
+        </div>
+
+        <div class="input-field col s12 m4">
+          <input id="email" name="email" type="email" required=""/>
+          <label for="email">Email <span class="red-text">*</span></label>
+        </div>
+      </div>
+
+      <div class="row mt2">
+        <div class="input-field col s12 m4">
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            required=""
+            pattern="^\d{3}(-*)\d{3}\1\d{4}$"
+            data-parsley-pattern-message="Example: 408-555-5555"
+          />
+          <label for="phone">Phone <span class="red-text">*</span></label>
+        </div>
+
+        <div class="col s12 m4">
+          <p class="bold mt1">Gender</p>
+          <p class="normal mb0">
+          {% assign genders = "Male;Female;Other" | split: ";" %}
+          {% for gender in genders %}
+            {% assign id = gender %}
+            <label for="{{ id }}">
+              <input
+                id="{{ id }}"
+                name="gender"
+                value="{{ gender }}"
+                type="radio"
+                class="with-gap"
+              />
+              <span>{{ gender }}</span>
+            </label>
+            <br />
+          {% endfor %}
+          </p>
+        </div>
+<!--
+        <div class="input-field col s12 m4">
+          <select id="gender" name="gender">
+            <option value="" disabled selected>Select your Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          <label for="gender">Gender</label>
+        </div>
+ -->
+
+        <div class="col s12 m4">
+          <p class="bold mt1">Age Range</p>
+          <p class="normal mb0">
+          {% assign ageRanges = "10-19;20-29;30-39;40-49;50-59;60-69;70-79;80-89;90-99" | split: ";" %}
+          {% for ageRange in ageRanges %}
+          <label for="{{ ageRange }}">
+            <input
+              id="{{ ageRange }}"
+              name="ageRange"
+              value="{{ ageRange }}"
+              type="radio"
+              class="with-gap"
+            />
+            <span>{{ ageRange }}</span>
+          </label>
+          <br />
+          {% endfor %}
+          </p>
+        </div>
+
+<!--
+        <div class="input-field col s12 m4">
+          <select id="age" name="age">
+            <option value="" disabled selected>Select your Age</option>
+            {% for i in (18..99) %}
+            <option value="{{ i }}">{{ i }}</option>
+            {% endfor %}
+          </select>
+          <label for="age">Age</label>
+        </div>
+      </div>
+-->
+
+      <div class="row mt2">
+        <div class="col s12 m3">
+          <p class="bold mt1">Training Type <span class="red-text">*</span></p>
+          <p class="normal mb0">
+            <label for="t1">
+              <input
+                id="t1"
+                name="training-type"
+                type="checkbox"
+                value="private"
+                class="filled-in"
+                data-parsley-mincheck="1"
+                required=""
+                data-parsley-errors-container="#training-type-error-messages"
+                data-parsley-required-message="Please select at least one option."
+              />
+              <span>Private</span>
+            </label>
+            <br />
+            <label for="t2">
+              <input
+                id="t2"
+                name="training-type"
+                type="checkbox"
+                value="semi-private"
+                class="filled-in"
+              />
+              <span>Semi-Private</span>
+            </label>
+            <br />
+            <label for="t3">
+              <input
+                id="t3"
+                name="training-type"
+                type="checkbox"
+                value="small group"
+                class="filled-in"
+              />
+              <span>Small Group</span>
+            </label>
+            <div id="training-type-error-messages"></div>
+          </p>
+        </div>
+
+        <div class="col s12 m3">
+          <p class="bold mt1">What Days? <span class="red-text">*</span></p>
+          <p class="normal mb0">
+          {% assign days = "monday, tuesday, wednesday, thursday, friday, saturday, sunday" | split: ", " %}
+          {% for day in days %}
+            <label for="{{ day }}">
+              <input
+                id="{{ day }}"
+                name="days"
+                type="checkbox"
+                value="{{ day }}"
+                class="filled-in"
+                {% if forloop.first == true %}
+                  data-parsley-mincheck="1"
+                  required=""
+                  data-parsley-errors-container="#days-error-messages"
+                  data-parsley-required-message="Please select at least one day."
+                {% endif %}
+              />
+              <span>{{ day | upcase }}</span>
+            </label>
+            <br />
+          {% endfor %}
+          <div id="days-error-messages"></div>
+          </p>
+        </div>
+
+        <div class="col s12 m3">
+          <p class="bold mt1">What Times? <span class="red-text">*</span></p>
+          <p class="normal mb0">
+          {% assign times = "6am-8am, 8am-10am, 10am-12pm, 12pm-2pm, 2pm-4pm, 4pm-6pm, 6pm-8pm" | split: ", " %}
+          {% for time in times %}
+            <label for="{{ time }}">
+              <input
+                id="{{ time }}"
+                name="times"
+                type="checkbox"
+                value="{{ time }}"
+                class="filled-in"
+                {% if forloop.first == true %}
+                  data-parsley-mincheck="1"
+                  required=""
+                  data-parsley-errors-container="#times-error-messages"
+                  data-parsley-required-message="Please select at least one time."
+                {% endif %}
+              />
+              <span>{{ time }}</span>
+            </label>
+            <br />
+          {% endfor %}
+          <div id="times-error-messages"></div>
+          </p>
+        </div>
+
+        <div class="col s12 m3">
+          <p class="bold mt1">Referred By?</p>
+          {% assign sources = "Google Search;Friend;Social Media;Other" | split: ";" %}
+          {% for source in sources %}
+            {% assign id = source | downcase | replace: " ", "-" %}
+            <p class="normal mb0">
+              <label for="{{ id }}">
+                <input id="{{ id }}" name="referrer" value="{{ source }}" type="checkbox" class="filled-in" />
+                <span>{{ source }}</span>
+              </label>
+            </p>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="row mt2">
+        <div class="col s12">
+          <p class="bold mt1">Any specific requirements or message?</p>
+          <div class="input-field">
+            <textarea id="message" name="message" class="materialize-textarea"></textarea>
+            <label for="message">Write your message here...</label>
+          </div>
+        </div>
+      </div>
+
+      <input type="hidden" name="_next" value="{{ '/thanks/' }}" />
+      <input type="hidden" name="_subject" value="{{ 'Consultation Request | ' | append: page.title }}" />
+      <!-- <input type="hidden" name="_cc" value="{{ site.developer }}" /> -->
+      <input type="text" name="_gotcha" style="display:none" />
+      <button type="submit" name="Submit" value="Book Consult" form="book-form" class="btn-large btn-bmi--generic">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

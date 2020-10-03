@@ -1,0 +1,83 @@
+{% assign title = page.title | downcase %}
+<ul id="about-dropdown" class="dropdown-content">
+  <li>
+    <a href="{{ '/about/' | relative_url }}" class="black-text">Our Story</a>
+  </li>
+  <li>
+    <a href="{{ '/reviews/' | relative_url }}" class="black-text">Reviews</a>
+  </li>
+  <li>
+    <a href="{{ '/careers/' | relative_url }}" class="black-text"
+      >Careers at BMI</a
+    >
+  </li>
+</ul>
+<nav role="navigation">
+  <div class="nav-wrapper">
+    <a href="{{ '/' | relative_url }}" class="brand-logo"> {{ site.title }} </a>
+    <a
+      href="/"
+      data-target="nav-mobile"
+      class="sidenav-trigger"
+      aria-label="mobile menu icon"
+    >
+      <i class="fas fa-bars"></i>
+    </a>
+    <ul class="right hide-on-med-and-down">
+      <li class="{% if title == 'about' %}active{% endif %}">
+        <a
+          href="{{ '/about/' | relative_url }}"
+          class="dropdown-trigger"
+          data-target="about-dropdown"
+        >
+          About&nbsp;<i class="fas fa-caret-down right"></i>
+        </a>
+      </li>
+      <li class="{% if title == 'services' %}active{% endif %}">
+        <a href="{{ '/services/' | relative_url }}">Services</a>
+      </li>
+      <li class="{% if title == 'trainers' %}active{% endif %}">
+        <a href="{{ '/trainers/' | relative_url }}">Trainers</a>
+      </li>
+      <li class="{% if title == 'blog' %}active{% endif %}">
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      </li>
+    </ul>
+
+    <ul id="nav-mobile" class="sidenav">
+      <li>
+        <a href="{{ '/about/' | relative_url }}"><strong>About</strong></a>
+        <ul>
+          <li>
+            <a href="{{ '/about/' | relative_url }}"
+              ><i class="fas fa-caret-right"></i>Our Story</a
+            >
+          </li>
+          <li>
+            <a href="{{ '/reviews/' | relative_url }}"
+              ><i class="fas fa-caret-right"></i>Reviews</a
+            >
+          </li>
+          <li>
+            <a href="{{ '/careers/' | relative_url }}"
+              ><i class="fas fa-caret-right"></i>Careers at BMI</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="{{ '/services/' | relative_url }}"
+          ><strong>Services</strong></a
+        >
+      </li>
+      <li>
+        <a href="{{ '/trainers/' | relative_url }}"
+          ><strong>Trainers</strong></a
+        >
+      </li>
+      <li>
+        <a href="{{ '/blog/' | relative_url }}"><strong>Blog</strong></a>
+      </li>
+    </ul>
+  </div>
+</nav>

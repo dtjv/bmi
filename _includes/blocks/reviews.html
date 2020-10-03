@@ -1,0 +1,67 @@
+{% for testimonial in site.data.testimonials.testimonials %}
+<div class="mt3">
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="col s2">
+          <!-- pic -->
+          {% if testimonial.image %}
+            {% include pic.html src=testimonial.image.src alt=testimonial.image.alt classes="circle" %}
+          {% endif %}
+        </div>
+        <div class="col s10">
+          <!-- name -->
+          <h4>{{ testimonial.name | default: "Anonymous" }}</h4>
+
+          <!-- stars -->
+          {% for i in (1..testimonial.starRating) %}
+          <i class="fas fa-star icons" aria-hidden="true" aria-label="star rating"></i>
+          {% endfor %}
+
+          <!-- comment -->
+          <blockquote>
+            <p> {{ testimonial.comment | markdownify }} </p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% assign num_to_show = include.block.config.count | default: site.data.reviews.reviews.size %}
+<div class="mt3">
+  {% for review in site.data.reviews.reviews | limit: num_to_show %}
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="col s2">
+          <!-- pic -->
+          {% unless review.reviewer.isAnonymous %}
+            {% assign src_url = review.reviewer.profilePhotoUrl | default: "https://via.placeholder.com/150/?text=" %}
+            <a href="{{ review.name }}" alt="link to review">
+              <img src="{{ src_url }}" class="circle" alt="reviewers profile photo">
+            </a>
+          {% endunless %}
+        </div>
+        <div class="col s10">
+          <!-- name -->
+          <a href="{{ review.name }}" class="black-text" alt="link to review">
+            <h4> {{ review.reviewer.displayName | default: "Anonymous" }} </h4>
+          </a>
+          <!-- stars -->
+          {% for i in (1..review.starRating) %}
+          <i class="fas fa-star icons" aria-hidden="true" aria-label="star rating"></i>
+          {% endfor %}
+          <!-- comment -->
+          <blockquote>
+            <p></p>
+            <p> {{ review.comment }} </p>
+            <p></p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

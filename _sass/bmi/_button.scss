@@ -1,0 +1,28 @@
+button {
+  border: none;
+  border-radius: 2px;
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+
+.btn {
+  &-bmi--find {
+    color: black;
+    background-color: $brand-secondary;
+
+    &:hover {
+      color: white;
+      background-color: $brand-primary;
+    }
+  }
+
+  &-bmi--generic {
+    color: white;
+    background-color: black;
+
+    &:hover {
+      color: black;
+      background-color: $brand-secondary;
+    }
+  }
+}

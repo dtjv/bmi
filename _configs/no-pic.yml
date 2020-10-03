@@ -1,0 +1,3 @@
+# configuration for jekyll-picture-tag plugin
+picture:
+  disabled: true

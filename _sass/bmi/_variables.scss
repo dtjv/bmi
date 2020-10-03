@@ -1,0 +1,26 @@
+$bmi-blue: #25408F !default;
+$bmi-blue--lite: #3173A8 !default;
+$bmi-blue--dark: #1A2D65 !default;
+
+$bmi-yellow: #FFEE58 !default;
+
+$bmi-red: #B94A48 !default;
+$bmi-red--lite: #F2DEDE !default;
+
+$bmi-grey: #9e9e9e !default;
+$bmi-grey--lite: #eeeeee !default;
+$bmi-grey--dark: #424242 !default;
+
+// Materialize Override
+$secondary-color: $bmi-blue--dark !default;
+
+$brand-primary: $bmi-blue;
+$brand-primary--lite: $bmi-blue--lite;
+$brand-primary--dark: $bmi-blue--dark;
+
+$brand-secondary: $bmi-yellow;
+
+$brand-tertiary: $bmi-grey;
+$brand-tertiary--lite: $bmi-grey--lite;
+$brand-tertiary--dark: $bmi-grey--dark;
+

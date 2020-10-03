@@ -1,0 +1,5 @@
+---
+markup_presets:
+  default:
+    markup: auto
+    formats: [webp, original]

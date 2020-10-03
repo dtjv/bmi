@@ -1,0 +1,38 @@
+---
+label: summary
+hide_body: true
+fields:
+- type: field_group
+  name: summary
+  label: Summary
+  description: Write a short summary of this page
+  fields:
+  - type: textarea
+    name: description
+    label: Description
+    description: Provide a brief description of the page
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: field_group
+    name: image
+    label: Image
+    description: Provide the main summary image
+    fields:
+    - type: file
+      name: src
+      label: Image URL
+    - type: text
+      name: alt
+      label: Image 'alt'
+      description: Write a short description of image
+      config:
+        required: true
+    config:
+      required: true
+  - type: text
+    name: button_label
+    label: Button Label
+    default: Learn More
+    description: Provide a button label to access document. (Default is "Learn More")

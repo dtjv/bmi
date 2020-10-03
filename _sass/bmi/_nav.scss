@@ -1,0 +1,22 @@
+nav {
+  background-color: $brand-primary !important;
+
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+
+    & > li {
+      list-style-type: none;
+    }
+  }
+
+  @media #{$medium-and-up} {
+    padding-right: 90px;
+    padding-left: 90px;
+  }
+}
+
+nav i.right {
+  margin-left: 2px;
+  font-size: medium;
+}

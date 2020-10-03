@@ -1,0 +1,39 @@
+.page-footer {
+  color: black;
+  margin-top: 3em;
+  padding-top: 3em;
+  background-color: $brand-tertiary--lite !important;
+
+  h5 {
+    color: $brand-primary !important;
+  }
+
+  a {
+    color: black;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & .sitemap {
+    ul {
+      @extend %non-markdown-ul;
+      padding-top:.5em;
+
+      li {
+        padding: 5px 5px 5px 0;
+      }
+    }
+  }
+
+  & .contact {
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
+  & .footer-copyright {
+    background-color: $brand-tertiary--dark !important;
+  }
+}

@@ -1,0 +1,18 @@
+---
+label: page
+hide_body: false
+fields:
+- type: include
+  name: title
+  label: Title
+  template: title
+pages:
+- _pages/404.md
+- _pages/about.md
+- _pages/blog.md
+- _pages/careers.md
+- _pages/index.md
+- _pages/reviews.md
+- _pages/services.md
+- _pages/thanks.md
+- _pages/trainers.md

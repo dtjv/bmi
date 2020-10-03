@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div class="container">
+  <div class="row">
+    <div class="col s12 m4 mt3">
+      {% for image in page.images %}
+        {% include pic.html src=image.src alt=image.alt %}
+      {% endfor %}
+    </div>
+    <div class="col s12 m8 mt3">
+      {{ content }}
+    </div>
+  </div>
+  {% include blocks/forms/book.html %}
+</div>

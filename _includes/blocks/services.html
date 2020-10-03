@@ -1,0 +1,30 @@
+{% assign services_by_position = site.services | sort: "sort_position" %}
+
+{% for service in services_by_position %}
+  {% assign summary = service.summary %}
+  <div class="divider mb2"></div>
+  <section class="mo">
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="mo-image valign-wrapper">
+          {% include pic.html src=summary.image.src alt=summary.image.alt %}
+        </div>
+      </div>
+      <div class="col s12 m6">
+        <div class="mo-text">
+          <h4 id="{{ service.title | slugify }}"> {{ service.title }} </h4>
+          {{ summary.description | markdownify }}
+
+          {% assign url = service.path | remove: "_" | remove: ".md" | absolute_url %}
+          <button type="button">
+            <a href="{{ url }}" class="waves-effect waves-light btn btn-bmi--generic mt0">
+              {{ summary.button_label }}
+            </a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endfor %}
+
+

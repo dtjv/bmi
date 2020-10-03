@@ -1,0 +1,34 @@
+---
+label: post
+hide_body: false
+fields:
+- type: include
+  name: title
+  label: Title
+  template: title
+- type: include
+  name: summary
+  label: Summary
+  template: summary
+- type: datetime
+  name: date
+  label: Publish Date
+  default: now
+  config:
+    required: true
+- type: boolean
+  name: comments
+  label: Allow Readers to Comment?
+  default: false
+pages:
+- _posts/2018-01-01-what-training-to-do-a-pull-up-taught-me.md
+- _posts/2019-01-01-aging-like-a-fine-wine.md
+- _posts/2019-02-01-if-as-in-intermittent-fasting.md
+- _posts/2019-03-01-are-you-at-the-top-of-your-nutrition-game.md
+- _posts/2019-04-01-fit-for-adventure.md
+- _posts/2019-05-01-let-s-talk-about-sleep-baby.md
+- _posts/2019-06-01-strong-is-the-new-black.md
+- _posts/2019-07-01-let-s-get-in-the-zone.md
+- _posts/2019-09-01-is-blue-light-giving-you-the-blues.md
+- _posts/2020-01-01-find-out-what-you-are-made-of.md
+- _posts/2020-02-01-train-with-intent.md
