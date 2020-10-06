@@ -6,19 +6,19 @@ address:
   zip: 95050
   country: U.S.A.
 hours:
-- name: Monday
-  hours: 6:00 AM to 8:00 PM
-- name: Tuesday
-  hours: 6:00 AM to 8:00 PM
-- name: Wednesday
-  hours: 6:00 AM to 8:00 PM
-- name: Thursday
-  hours: 6:00 AM to 8:00 PM
-- name: Friday
-  hours: 6:00 AM to 8:00 PM
-- name: Saturday
-  hours: BY APPOINTMENT ONLY
-- name: Sunday
-  hours: BY APPOINTMENT ONLY
-phone: (408) 492-1425
-email: info@bmifitnesscoach.com
+  - name: Monday
+    hours: Closed
+  - name: Tuesday
+    hours: Closed
+  - name: Wednesday
+    hours: Closed
+  - name: Thursday
+    hours: Closed
+  - name: Friday
+    hours: Closed
+  - name: Saturday
+    hours: Closed
+  - name: Sunday
+    hours: Closed
+phone: (555) 555-5555
+email: (sorry, out of business)

@@ -59,24 +59,26 @@
             <div class="mt2 mb2">
               {% for icon in site.footer_icons %}
               <span class="mr1">
+                <!--
                 <a
                   href="{{ icon.link }}"
                   aria-label="social media icon for {{ icon.name }}"
                 >
-                  <i
-                    class="{{ icon.icon_classes }} icons icons-large"
-                    aria-hidden="true"
-                  ></i>
-                </a>
+                -->
+                <i
+                  class="{{ icon.icon_classes }} icons icons-large"
+                  aria-hidden="true"
+                ></i>
+                <!-- </a> -->
               </span>
               {% endfor %}
 
-              <a href="mailto:{{ contact.email }}" aria-label="email icon">
-                <i
-                  class="fas fa-envelope icons icons-large"
-                  aria-hidden="true"
-                ></i>
-              </a>
+              <!-- <a href="mailto:{{ contact.email }}" aria-label="email icon"> -->
+              <i
+                class="fas fa-envelope icons icons-large"
+                aria-hidden="true"
+              ></i>
+              <!-- </a> -->
             </div>
           </div>
         </div>

@@ -6,7 +6,8 @@
 </div>
 <div class="row">
   <div class="col s12">
-    <form id="join-form" action="https://formspree.io/{{ site.data.contact.email }}" method="POST" class="col s12" data-parsley-validate="">
+    <!-- <form id="join-form" action="https://formspree.io/{{ site.data.contact.email }}" method="POST" class="col s12" data-parsley-validate=""> -->
+    <form id="join-form" action="" method="POST" class="col s12" data-parsley-validate="">
       <div class="row mt2">
         <div class="input-field col s12 m3">
           <input id="first_name" name="first_name" type="text" required="" />
@@ -251,7 +252,7 @@
       <!-- <input type="hidden" name="_cc" value="{{ site.developer }}" /> -->
       <input type="hidden" name="page-title" value="{{ page.title }}" style="display:none" />
       <input type="text" name="_gotcha" style="display:none" />
-      <button type="submit" name="Submit" value="Join BMI" form="join-form" class="btn-large btn-bmi--generic">
+      <button type="button" name="Submit" value="Join BMI" form="join-form" class="btn-large btn-bmi--generic">
         Submit
       </button>
     </form>
