@@ -1,8 +1,8 @@
 # bmi
 
-Website for BMI Fitness. ([demo](https://dtjv.io/bmi/))
+Website for BMI Fitness. _(Unfortunately, this business closed due to COVID-19)_
 
-_Unfortunately, this business closed due to COVID-19._
+### [View demo](https://dtjv.io/bmi/)
 
 ## Tech Stack
 
@@ -13,3 +13,7 @@ _Unfortunately, this business closed due to COVID-19._
 - [Disqus](https://disqus.com/)
 - [Forestry.io](https://forestry.io)
 - [Formspree](https://formspree.io/)
+
+## Author
+
+- [David Valles](https://dtjv.io)
